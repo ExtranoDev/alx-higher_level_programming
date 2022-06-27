@@ -1,2 +1,3 @@
-#!/bin/sh
-python3 $PYFILE
+#!/bin/bash
+chmod u+x $PYFILE
+./$PYFILE
