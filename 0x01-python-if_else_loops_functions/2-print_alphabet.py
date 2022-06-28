@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-test = "abcdefgjijklmnopqrstuvwxyz"
+test = "abcdefghijklmnopqrstuvwxyz"
 for i in test:
     print("{}".format(i), end='')
