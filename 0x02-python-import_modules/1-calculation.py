@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 if __name__ = "__main__":
     import calculator_1 as cals
     a = 10
