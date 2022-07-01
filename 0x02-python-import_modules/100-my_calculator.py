@@ -22,6 +22,5 @@ if __name__ == "__main__":
     elif ops == "/":
         passprint(out_print.format(a, "/", b, div(a, b)))
         sys.exit(0)
-    else:
-        print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
+    print("Unknown operator. Available operators: +, -, * and /")
+    sys.exit(1)
