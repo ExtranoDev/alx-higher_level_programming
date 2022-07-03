@@ -10,6 +10,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
                 else:
                     temp[idx] = (temp[idx][0], 0)
             idx = idx + 1
-        return (temp[0][0] + temp [1][0], temp[0][1] + temp[1][1])
-            
-            
+        return (temp[0][0] + temp[1][0], temp[0][1] + temp[1][1])
+    else:
+        return ()
