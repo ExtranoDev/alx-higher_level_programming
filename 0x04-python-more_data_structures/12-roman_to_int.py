@@ -2,6 +2,7 @@
 def roman_to_int(roman_string):
     if isinstance(roman_string, str):
         total = 0
+        temp = 0
         roman_dict = {
                 'M': 1000,
                 'D': 500,
@@ -11,7 +12,8 @@ def roman_to_int(roman_string):
                 'V': 5,
                 'I': 1
                 }
-        for i in roman_string:
-            total += roman_dict[i]
+        for i in reversed(roman_string):
+            temp = roman_dict[i]
+            total += temp if total < temp * 5 else -temp
         return total
     return 0
