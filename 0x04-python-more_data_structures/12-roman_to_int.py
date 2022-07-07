@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string and isinstance(roman_string, str):
+    if isinstance(roman_string, str):
         total = 0
         roman_dict = {
                 'M': 1000,
