@@ -4,7 +4,7 @@ Creates class and gives it a private attribute
 """
 
 
-class square:
+class Square:
     """A class with a private attribute
 
     Attributes:
