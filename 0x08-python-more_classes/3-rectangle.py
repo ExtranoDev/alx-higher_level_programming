@@ -24,12 +24,13 @@ class Rectangle:
             # pattern according to format
             '' if any of the parameter is 0
         """
+        str_1 = ""
         if self.__width > 0 and self.__height > 0:
             for i in range(self.__height):
-                for j in range(self.__width):
-                    print("#", end="")
-                print("")
-        return ""
+                str_1 += ("#" * self.__width)
+                if i is not self.__height - 1:
+                    str_1 += "\n"
+        return str_1
 
     @property
     def width(self):
