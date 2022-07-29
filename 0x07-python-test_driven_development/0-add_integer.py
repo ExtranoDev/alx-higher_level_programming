@@ -21,9 +21,13 @@ def add_integer(a, b=98):
     Returns:
         int: sum of a and b
     """
-
-    if type(a) not in (int, float):
-        raise TypeError("a must be an integer")
-    if type(b) not in (int, float):
-        raise TypeError("b must be an integer")
-    return int(a) + int(b)
+    values = []
+    for i, nm in [(a, 'a'), (b, 'b')]:
+        if not isinstance(i, int):
+            if not isinstance(i, float):
+                raise TypeError("{} must be an integer".format(nm))
+            else:
+                values.append(int(i))
+        else:
+            values.append(i)
+    return sum(values)
