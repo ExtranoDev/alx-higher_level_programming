@@ -1,0 +1,23 @@
+Tests for the add_integer function
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(8, 9)
+17
+>>> add_integer(8.0, 7)
+15
+>>> add_integer(12.0, 7.1)
+19
+>>> add_integer(12, 7.1)
+19
+>>> add_integer([12, 34], 7.1)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(34, (1, 2))
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer(34)
+132
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
