@@ -24,10 +24,3 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     return [[round(i / div, 2) for i in nm] for nm in matrix]
-
-
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6]]
-print(matrix_divided(matrix, 3))
-print(matrix)
