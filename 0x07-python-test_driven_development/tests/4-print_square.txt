@@ -9,10 +9,6 @@ Tests for the print_square function
 #####
 #####
 
->>> print_square(10 ** 5000000)
-Traceback (most recent call last):
-OverflowError: cannot fit 'int' into an index-sized integer
-
 >>> print_square("we")
 Traceback (most recent call last):
 TypeError: size must be an integer
