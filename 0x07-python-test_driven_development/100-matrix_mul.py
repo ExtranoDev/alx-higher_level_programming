@@ -46,7 +46,7 @@ def matrix_mul(m_a, m_b):
 
         for ma in m_a:
             ma_ct = 0
-            tmp_ls = [0 for j in range(len(ma))]
+            tmp_ls = [0 for j in range(len(m_a))]
             for mb in m_b:
                 tmp_ct = 0
                 while tmp_ct < len(mb):
