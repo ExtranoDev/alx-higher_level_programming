@@ -5,6 +5,7 @@ Lookup Function
 Module looksup attributes of an object
 """
 
+
 def lookup(obj):
     """
     Looks up atributes of an object
