@@ -21,8 +21,12 @@ class BaseGeometry:
         Args:
             name (str): str value
             value (int): int value
+
+        Raises:
+            TypeError: value must be an integer
+            ValueError: value must be greater than 0
         """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         elif value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
