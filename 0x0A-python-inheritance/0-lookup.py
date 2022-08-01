@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """
+Lookup Function
+
 Module looksup attributes of an object
 """
 
