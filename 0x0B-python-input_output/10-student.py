@@ -25,7 +25,7 @@ class Student:
         """
         Returns details of a class instace in a dictionary form
         """
-        if attrs != None and type(attrs) is list:
+        if attrs is not None and type(attrs) is list:
             temp_dict = dict()
             for i in attrs:
                 if i in self.__dict__.keys():
