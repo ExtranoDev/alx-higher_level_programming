@@ -37,6 +37,6 @@ class Student:
         """
         Load files like json
         """
-        self.first_name = json[first_name]
-        self.last_name = json[last_name]
-        self.age = json[age]
+        for i in json:
+            if i in ['first_name', 'last_name', 'age']:
+                self.i = json[i]
