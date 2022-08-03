@@ -39,4 +39,4 @@ class Student:
         """
         for i in json:
             if i in ['first_name', 'last_name', 'age']:
-                self.i = json[i]
+                setattr(self, i, json[i])
