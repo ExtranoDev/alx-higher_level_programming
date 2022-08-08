@@ -10,7 +10,7 @@ class Rectangle(Base):
     Class Rectangle inherits from Base class
 
     Args:
-        Base (class): 
+        Base (class): inherits Base
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
