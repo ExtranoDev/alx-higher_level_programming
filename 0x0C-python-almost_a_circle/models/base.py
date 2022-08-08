@@ -44,8 +44,12 @@ class Base:
         if list_objs is not None and type(list_objs) is list:
             if not any(isinstance(i, cls) for i in list_objs):
                 raise TypeError("")
+        
+        temp_dict = []
+        if list_objs is None:
+            temp_dict = [i.to_dictionary() for i in list_objs]
         nm = str(type(list_objs[0]).__name__) + ".json"
-        temp_dict = [i.to_dictionary() for i in list_objs]
+        
         with open(nm, 'w') as f:
             f.write(cls.to_json_string(temp_dict))
 
