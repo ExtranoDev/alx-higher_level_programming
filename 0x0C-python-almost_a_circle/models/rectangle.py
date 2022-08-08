@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Modele defines a rectangle class
+Module defines a rectangle class
 """
 from models.base import Base
 
@@ -8,6 +8,9 @@ from models.base import Base
 class Rectangle(Base):
     """
     Class Rectangle inherits from Base class
+
+    Args:
+        Base (class): 
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -35,6 +38,9 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
+        """
+        Function format for print 
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.__x,
                                                        self.__y,
@@ -43,6 +49,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """
+        Width getter
+
+        Returns:
+            the value of width
+        """
         return self.__width
 
     @width.setter
@@ -52,6 +64,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """
+        Height getter
+
+        Returns:
+            the value of height
+        """
         return self.__height
 
     @height.setter
@@ -61,6 +79,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """
+        X getter
+
+        Returns:
+            the value of x
+        """
         return self.__x
 
     @x.setter
@@ -70,6 +94,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """
+        Y getter
+
+        Returns:
+            the value of y
+        """
         return self.__y
 
     @y.setter
@@ -85,6 +115,7 @@ class Rectangle(Base):
 
     def display(self):
         """
+        Creates a format for displaying patters
         """
         height = self.__height
         x = self.x
@@ -98,6 +129,13 @@ class Rectangle(Base):
             height -= 1
 
     def update(self, *args, **kwargs):
+        """
+        Updates instance attributes
+
+        Args:
+            args (list): list of attributes
+            kwargs (dict): dictionary format of attributes
+        """
         if len(args) == 0:
             for i in kwargs.keys():
                 if i == "id":
@@ -122,6 +160,9 @@ class Rectangle(Base):
                 self.y = args[4]
 
     def to_dictionary(self):
+        """
+        Creates a dictionary format of all attributes
+        """
         temp_dict = {}
         temp_dict["width"] = self.width
         temp_dict["height"] = self.height
