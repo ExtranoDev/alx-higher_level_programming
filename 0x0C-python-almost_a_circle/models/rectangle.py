@@ -39,7 +39,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        Function format for print 
+        Function format for print
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.__x,
