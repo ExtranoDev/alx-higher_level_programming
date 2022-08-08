@@ -129,4 +129,3 @@ class Rectangle(Base):
         temp_dict["y"] = self.y
         temp_dict["id"] = self.id
         return temp_dict
-
