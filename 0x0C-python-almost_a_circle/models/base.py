@@ -42,7 +42,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         if list_objs is not None and type(list_objs) is list:
-            if not any(issubclass(type(i), cls) for i in list_objs):
+            if not any(isinstance(i, cls) for i in list_objs):
                 raise TypeError("")
         nm = str(type(list_objs[0]).__name__) + ".json"
         temp_dict = [i.to_dictionary() for i in list_objs]

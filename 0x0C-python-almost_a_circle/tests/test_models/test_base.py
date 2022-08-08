@@ -12,6 +12,6 @@ class TestingBase(unittest.TestCase):
     def test_attr(self):
         temp = Base()
         #self.assertTrue(hasattr(temp, "nb_objects"))
-        #self.assertTrue(hasattr(Base(), "__nb_objects"))
+        self.assertTrue(hasattr(Base(), "_Base__nb_objects"))
         self.assertTrue(hasattr(temp, "id"))
         self.assertEqual(temp.id, 1)
