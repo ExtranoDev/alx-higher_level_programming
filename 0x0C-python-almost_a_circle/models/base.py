@@ -100,8 +100,7 @@ class Base:
         Returns:
             a class instance created using a dictionary
         """
-        dum_cls = cls(1, 1) if cls.__name__ == "Rectangle" else\
-                cls(1)
+        dum_cls = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         dum_cls.update(**dictionary)
         return dum_cls
 
