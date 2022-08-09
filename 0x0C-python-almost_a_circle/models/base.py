@@ -59,7 +59,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """
         Saves objects to file in json format
-        
+
         Args:
             cls (class): class
             list_objs (list): list of instances
@@ -68,7 +68,7 @@ class Base:
         if list_objs is not None:
             temp_dict = [i.to_dictionary() for i in list_objs]
         nm = cls.__name__ + ".json"
-        
+
         with open(nm, 'w') as f:
             f.write(cls.to_json_string(temp_dict))
 
