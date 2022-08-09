@@ -3,6 +3,7 @@
 Module for Base class definition
 """
 import json
+import csv
 
 
 class Base:
@@ -122,3 +123,54 @@ class Base:
                 return [cls.create(**i) for i in dict_list]
         except Exception:
             return []
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Load class attributes from csv
+
+        Args:
+            cls (class): class instance
+
+        Returns:
+            empty list if file is empty of
+            list of instance of a class
+        """
+        nm = cls.__name__ + ".csv"
+        try:
+            with open(nm, 'r') as f:
+                fld_name = ["id", "width", "height", "x", "y"]
+                if cls.__name__ == "Square":
+                    del fld_name[1:3]
+                    fld_name.insert(1, "size")
+                csv_r = csv.DictReader(f, fieldnames=fld_name)
+                list_objs = [dict([k, int(v)] for k, v in dt.items())
+                             for dt in csv_r]
+            return [cls.create(**i) for i in list_objs]
+        except Exception:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Save details of class in csv
+
+        Args:
+            cls (class): class instance
+            list_objs (list): list of class instance
+        """
+        nm = cls.__name__ + ".csv"
+        with open(nm, "w") as f:
+            if list_objs is not None and list_objs != []:
+                list_dict = [i.to_dictionary() for i in list_objs]
+
+                fld_name = ["id", "width", "height", "x", "y"]
+                if cls.__name__ == "Square":
+                    del fld_name[1:3]
+                    fld_name.insert(1, "size")
+
+                writer = csv.DictWriter(f, fieldnames=fld_name)
+                for i in list_dict:
+                    writer.writerow(i)
+            else:
+                f.write("[]")
