@@ -90,7 +90,36 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        Creates a new class instance from a dictionary
+
+        Args:
+            cls (class): class
+            dictionary (dict): a dictionary of instances
+
+        Returns:
+            a class instance created using a dictionary
+        """
         dum_cls = cls(1, 1) if cls.__name__ == "Rectangle" else\
                 cls(1)
         dum_cls.update(**dictionary)
         return dum_cls
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Load json string from a file
+
+        Args:
+            cls (class): object class
+
+        Returns:
+            a python list object
+        """
+        nm = cls.__name__ + ".json"
+        try:
+            with open(nm, 'r') as f:
+                dict_list = cls.from_json_string(f.read())
+                return [cls.create(**i) for i in dict_list]
+        except Exception:
+            return []
