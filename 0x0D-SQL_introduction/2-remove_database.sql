@@ -1,0 +1,2 @@
+-- removes database without failing
+DROP DATABASE IF EXISTS hbtn_0c_0
