@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-fArg = process.argv[2];
-sArg = process.argv[3];
+let fArg = process.argv[2];
+let sArg = process.argv[3];
 
 if (fArg === undefined || sArg === undefined) {
   console.log('NaN');
@@ -15,6 +15,6 @@ if (fArg === undefined || sArg === undefined) {
   }
 }
 
-function add(a, b) {
+function add (a, b) {
   return a + b;
 }
