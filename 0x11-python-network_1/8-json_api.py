@@ -8,7 +8,7 @@ from sys import argv
 
 if __name__ == '__main__':
     par = {'q': ''}
-    if len(argv[1]) > 1:
+    if len(argv) > 1:
         par = {'q': argv[1]}
         r = requests.post('http://0.0.0.0:5000/search_user', par)
         if r.headers.get('Content-Type') == 'application/json':
