@@ -7,16 +7,17 @@ import requests
 from sys import argv
 
 if __name__ == '__main__':
-    if argv[1]:
+    par = {'q': ''}
+    if len(argv[1]):
         par = {'q': argv[1]}
+        r = requests.post('http://0.0.0.0:5000/search_user', par)
+        if r.headers['Content-Type'] == 'application/json':
+            resJson = r.json()
+            if resJson == {}:
+                print('No result')
+            else:
+                print("[{}] {}".format(resJson['id'], resJson['name']))
+        else:
+            print('Not a valid JSON')
     else:
-        {'q': ''}
-    r = requests.post('http://0.0.0.0:5000/search_user', par)
-    resJson = r.json()
-    if resJson == {}:
-        output = 'No result'
-    elif type(resJson) != dict:
-        output = 'Not a valid JSON'
-    else:
-        output = '[' + str(resJson['id']) + '] ' + resJson['name']
-    print(output)
+        print('No result')
