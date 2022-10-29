@@ -4,8 +4,8 @@
 displays the value of the X-Request-Id header variable."""
 
 from urllib.request import urlopen
-import sys
+from sys import argv
 
-url = sys.argv[1]
-with urlopen(url) as response:
-    print(response.headers.get('X-Request-Id'))
+if __name__ == "__main__":
+    with urlopen(argv[1]) as response:
+        print(response.headers.get('X-Request-Id'))
