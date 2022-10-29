@@ -11,7 +11,7 @@ if __name__ == '__main__':
     if len(argv[1]):
         par = {'q': argv[1]}
         r = requests.post('http://0.0.0.0:5000/search_user', par)
-        if r.headers['Content-Type'] == 'application/json':
+        if r.headers.get('Content-Type') == 'application/json':
             resJson = r.json()
             if resJson == {}:
                 print('No result')
