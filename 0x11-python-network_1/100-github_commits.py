@@ -14,9 +14,13 @@ if __name__ == '__main__':
     url = 'https://api.github.com/repos/{}/{}/commits'.format(
             argv[2], argv[1])
     r = requests.get(url)
-    rJson = r.json()
+    resDetails = r.json()
+    count = 0
 
-    for i in range(10):
-        sha = rJson[i]['sha']
-        name = rJson[i]['commit']['author']['name']
+    for res in resDetails:
+        sha = res['sha']
+        name = res['commit']['author']['name']
         print('{}: {}'.format(sha, name))
+        count += 1
+        if count == 10:
+            break
