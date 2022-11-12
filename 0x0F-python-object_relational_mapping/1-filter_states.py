@@ -13,7 +13,7 @@ if __name__ == '__main__':
         database = sys.argv[3]
         db = MySQLdb.connect(user=user, passwd=passwd, db=database)
         cur = db.cursor()
-        query = "SELECT * FROM states WHERE LEFT(name, 1) = 'N' ORDER by id"
+        query = "SELECT * FROM states WHERE LEFT(name, 1) = 'N%' ORDER by id"
         cur.execute(query)
 
         while (1):
