@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Connects to database and list items in database"""
+
 
 import MySQLdb
 import sys
@@ -10,8 +12,7 @@ if __name__ == '__main__':
         database = sys.argv[3]
         db = MySQLdb.connect(user=user, passwd=passwd, db=database)
         cur = db.cursor()
-        query = "SELECT * FROM states ORDER by id"
-        cur.execute(query)
+        cur.execute("SELECT * FROM states ORDER by id")
 
         while (1):
             row = cur.fetchone()
