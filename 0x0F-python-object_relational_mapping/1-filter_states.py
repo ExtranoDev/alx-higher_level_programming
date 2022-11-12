@@ -4,16 +4,13 @@ fiters result"""
 
 
 import MySQLdb
-import sys
+from sys import argv
 
 if __name__ == '__main__':
-    if (len(sys.argv) == 4):
-        user = sys.argv[1]
-        passwd = sys.argv[2]
-        database = sys.argv[3]
-        db = MySQLdb.connect(user=user, passwd=passwd, db=database)
+    if (len(argv) == 4):
+        db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
         cur = db.cursor()
-        query = "SELECT * FROM states WHERE LEFT(name, 1) = 'N%' ORDER by id"
+        query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER by id"
         cur.execute(query)
 
         while (1):
