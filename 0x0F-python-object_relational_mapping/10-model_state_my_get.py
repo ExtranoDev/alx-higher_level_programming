@@ -27,5 +27,8 @@ if __name__ == '__main__':
     session = Session()
 
     rows = session.query(State).filter(State.name == argv[4]).first()
-    print(rows.id)
+    if rows:
+        print(rows.id)
+    else:
+        print("Not found")
     session.close()
