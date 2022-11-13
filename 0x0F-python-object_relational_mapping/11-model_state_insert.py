@@ -30,8 +30,7 @@ if __name__ == '__main__':
     session.add(new_state)
     session.commit()
 
-    rows = session.query(State).all()
-    for row in rows:
-        print("{}: {}".format(row.id, row.name))
+    rows = session.query(State).filter(State.name == 'Louisiana').first()
+    print(rows.id)
 
     session.close()
