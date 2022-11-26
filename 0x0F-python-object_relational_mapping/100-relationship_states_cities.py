@@ -25,11 +25,11 @@ if __name__ == '__main__':
     session = Session()
 
     # new object
-    state = State(name='California')
-    city = City(name='San Francisco')
-    state.cities.append(city)
+    nState = State(name='California')
+    nCity = City(name='San Francisco')
+    nState.cities.append(nCity)
 
     # save created object
-    session.add(state)
+    session.add(nState)
     session.commit()
     session.close()
