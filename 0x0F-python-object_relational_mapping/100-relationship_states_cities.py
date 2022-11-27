@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Script creates State “California” with City “San Francisco”
-from the database"""
+"""Script creates State “California”
+with City “San Francisco” from the database"""
 
 
 from relationship_state import State, Base
