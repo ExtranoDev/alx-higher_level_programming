@@ -25,29 +25,24 @@ if __name__ == '__main__':
     session = Session()
 
     # new object
-<<<<<<< HEAD
     state = State(name='California')
     city = City(name='San Francisco')
     state.cities.append(city)
 
     # save created object
     session.add(state)
-=======
-<<<<<<< HEAD
+
     newState = State(name='California')
     newCity = City(name='San Francisco')
     newState.cities.append(newCity)
 
     # save created object
     session.add(newState)
-=======
     nState = State(name='California')
     nCity = City(name='San Francisco')
     nState.cities.append(nCity)
 
     # save created object
     session.add(nState)
->>>>>>> a25e465a8b683f021134d95a35769934a4bb4428
->>>>>>> parent of 4f4af21... merge
     session.commit()
     session.close()

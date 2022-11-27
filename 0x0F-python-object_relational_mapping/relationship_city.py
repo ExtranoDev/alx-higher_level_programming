@@ -2,11 +2,8 @@
 """Python file that works with SQLAlchemy"""
 
 from sqlalchemy import Column, String, Integer, ForeignKey
-<<<<<<< HEAD
 from model_state import Base
-=======
 from relationship_state import Base, State
->>>>>>> parent of 4f4af21... merge
 
 
 class City(Base):
@@ -17,9 +14,7 @@ class City(Base):
     id = Column(Integer, unique=True, nullable=False,
                 autoincrement=True, primary_key=True)
     name = Column(String(128), nullable=False)
-<<<<<<< HEAD
     state_id = Column(Integer, ForeignKey('states.id'),
                       nullable=False)
-=======
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
 >>>>>>> parent of 4f4af21... merge
