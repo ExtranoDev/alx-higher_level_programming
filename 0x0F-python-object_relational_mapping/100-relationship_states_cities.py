@@ -25,11 +25,20 @@ if __name__ == '__main__':
     session = Session()
 
     # new object
+<<<<<<< HEAD
     newState = State(name='California')
     newCity = City(name='San Francisco')
     newState.cities.append(newCity)
 
     # save created object
     session.add(newState)
+=======
+    nState = State(name='California')
+    nCity = City(name='San Francisco')
+    nState.cities.append(nCity)
+
+    # save created object
+    session.add(nState)
+>>>>>>> a25e465a8b683f021134d95a35769934a4bb4428
     session.commit()
     session.close()
