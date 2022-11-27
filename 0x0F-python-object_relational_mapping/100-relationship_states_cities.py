@@ -5,15 +5,15 @@ with City “San Francisco” from the database
 Imports code from Base and State"""
 
 
-from relationship_state import State, Base
-from relationship_city import City
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sys import argv
-
 if __name__ == '__main__':
     """creates the State “California” with the
     City “San Francisco” from the database"""
+
+    from relationship_state import State, Base
+    from relationship_city import City
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    from sys import argv
 
     # create engine
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
