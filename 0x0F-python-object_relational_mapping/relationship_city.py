@@ -2,7 +2,7 @@
 """Python file that works with SQLAlchemy"""
 
 from sqlalchemy import Column, String, Integer, ForeignKey
-from model_state import Base
+from relationship_state import Base, State
 
 
 class City(Base):
