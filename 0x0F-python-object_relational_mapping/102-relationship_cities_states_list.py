@@ -7,6 +7,7 @@ from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 
+
 def list_cities():
     """function lists cities"""
 
@@ -18,10 +19,11 @@ def list_cities():
     session = Session()
 
     rows = session.query(City, State).filter(City.state_id == State.id)\
-            .order_by(City.id).all()
+        .order_by(City.id).all()
     for city, state in rows:
         print("{}: {} -> {}".format(city.id, city.name, state.name))
     session.close()
+
 
 if __name__ == '__main__':
     list_cities()
